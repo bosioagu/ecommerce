@@ -5,13 +5,10 @@ let materiales = []
 
 //Carga de Material para la venta 
 class Material{
-    constructor(nombre, lugarColocacion, acabado, fabricante, medida, uso, precio ){
+    constructor(nombre, fabricante, stock, precio ){
         this.nombre = nombre
-        this.lugarColocacion = lugarColocacion
-        this.acabado = acabado
         this.fabricante = fabricante
-        this.medida = medida
-        this.uso = uso
+        this.stock = stock
         this.precio = precio
     }
 }
@@ -24,15 +21,12 @@ let productsForm = document.getElementById('productsForm')
 productsForm.addEventListener('submit',(e)=>{
     e.preventDefault()
     let nombre = document.getElementById('nombre').value
-    let lugarColocacion = document.getElementById('lugarColocacion').value
-    let acabado = document.getElementById('acabado').value
     let fabricante = document.getElementById('fabricante').value
-    let medida = document.getElementById('medida').value
-    let uso = document.getElementById('uso').value
+    let stock = document.getElementById('stock').value
     let precio = document.getElementById('precio').value
 
     //console.log(nombre,lugarColocacion, acabado,fabricante,medida,uso,`$ ${precio}`)
-    const materialForm= new Material (nombre, lugarColocacion, acabado, fabricante, medida, uso, precio )
+    const materialForm= new Material (nombre, fabricante, stock, precio )
     materiales.push(materialForm)
     productsForm.reset()
     localStorage.setItem ('materiales',JSON.stringify(materiales))
@@ -40,24 +34,26 @@ productsForm.addEventListener('submit',(e)=>{
 
 
 botonCargar.addEventListener('click',(e)=>{
+   
     e.preventDefault()
+    //window.location.href='index.html'
     let detallesParseados= JSON.parse(localStorage.getItem('materiales'))
     divRevestimientos.innerHTML = ""
     detallesParseados.forEach((material, indice)=> {
             divRevestimientos.innerHTML +=`
             <div class="card border-primary mb-3" id="tipo${indice + 1}" style="max-width: 20rem;">
                 <div class="card-body">
-                    <h5 class="card-title">${material.nombre} - ${material.fabricante}</h5>
-                        <p>Lugar de colocación: ${material.lugarColocacion} </p>
-                        <p>Acabado: ${material.acabado} </p>
-                        <p>Fabricante: ${material.fabricante} </p>
-                        <p>Dimensiones: ${material.medida} </p>
-                        <p>Intensidad de uso: ${material.uso} </p>
-                        <h6>$ ${material.precio} </h6>
+                <div class="card-body">
+                    <p class="card-text">${material.fabricante}</p>
+                    <h5 class="card-title">${material.nombre}</h5>
+                    <h6 class="card-text">$${material.precio}</h6>
+                    <p class="card-text">stock:  ${material.stock}</p>
                         <button type="button" class="btn btn-danger" id="boton${indice+1}">Eliminar</button>
-                    
+                        <button type="button" class="btn btn-danger" id="botonPublicar${indice+1}">Publicar</button>
+                        
                 </div>
             </div>`
+            
     })
     
 
@@ -69,6 +65,7 @@ botonCargar.addEventListener('click',(e)=>{
             materiales.splice(indice,1)
             localStorage.setItem('materiales',JSON.stringify(materiales))
             console.log(`material ${material.nombre}eliminado`)
+            
         })
     })
 })

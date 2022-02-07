@@ -1,0 +1,42 @@
+[
+    {
+        "id": "1",
+        "nombre":"PORCELANATO CONCRETE GREY",
+        "marca":"ALBERDI",
+        "precio":"4.486,79",
+        "stock":"183",
+        "img":"porcelanato-concrete-grey-alberdi-62-x-62-375x375m2.jpg"
+    },
+    {
+        "id": "2",
+        "nombre":"PORCELANATO ARTOIS DGR",
+        "marca":"PORTINARI",
+        "precio":"6.339,29",
+        "stock":"213",
+        "img":"porcelanato-artois-dgr-portinari375x375.jpg"
+    },
+    {
+        "id": "3",
+        "nombre":"PORCELANATO LEPIC",
+        "marca":"PAMESA",
+        "precio":"5.452,99",
+        "stock":"98",
+        "img":"porcelanato-22-x-22-lepic-pamesa375x375.jpg"
+    },
+    {
+        "id": "4",
+        "nombre":"PORCELANATO CORBUSIER",
+        "marca":"PAMESA",
+        "precio":"5.452,99",
+        "stock":"201",
+        "img":"porcelanato-22-x-22-corbusier-pamesa375x375.jpg"
+    },
+    {
+        "id": "5",
+        "nombre":"PORCELANATO GRANITO OUT SAND",
+        "marca":"CERRO NEGRO",
+        "precio":"5.024,60",
+        "stock":"388",
+        "img":"porcelanato-granito-out-sand-cerro-negro-375x375.jpg"
+    }
+]

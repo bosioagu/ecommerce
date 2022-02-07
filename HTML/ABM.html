@@ -9,102 +9,78 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel=”stylesheet” href=”https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css”>
     <link href="https://bootswatch.com/5/minty/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/f3f782b06f.js" crossorigin="anonymous"></script>    </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" type="button"  href="index.html">TileShop</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html">Iniciar Sesion</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="register.html">Registrarse</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="ABM.html">Carga de Productos</a>
-                    </li>
-                </ul>
-                <div>
-                    <h5 id= "usuario" type="text" class="nav-link disabled"></h5>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <body>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-primary ">
+            <div class="container-fluid">
+                <a class="navbar-brand" type="button"  href="index.html"><img class="logoHome" src="../img/logo.png"><img></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Iniciar Sesion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="register.html">Registrarse</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <h5 id= "usuario" type="text" class="nav-link disabled"></h5>
+                    </div>
+                        <a id="cartImage" href="cart.html"  type="submit" class="btn btn-primary">
+                            <i class="fas fa-cart-plus fa-lg "></i>
+                                    <span id="cantProducto" class= "translate-middle badge rounded-pill bg-danger">
+                            0
+                            <span class="visually-hidden">unread messages</span>
+                        </a> 
+                            <button id="botonLightMode" class="btn btn-light"><i class="fas fa-sun"></i></button>
+                            <button id="botonDarkMode" class="btn btn-dark"><i class="far fa-moon"></i></button>
+                    </div>
                 </div>
-                <div style="width:100px;position:absolute;right:0;">    
-                    
-                    <a href="cart.html" type="submit" class="btn btn-default btn-sm">
-                            <img src="../icons/cart.svg">  </img>
-                    </a>
-                        <button id="botonLightMode" class="btn btn-light"><i class="fas fa-sun"></i></button>
-                        <button id="botonDarkMode" class="btn btn-dark"><i class="far fa-moon"></i></button>
                 </div>
-            </div>
-            </div>
-        </nav>
+            </nav>
     </div>
         <br>
-            <div class="alert alert-danger" role="alert">
+            <div id="mensajeABM" class="alert alert-danger" role="alert">
                 Usted se encuentra en esta seccion por ser haber iniciado sesion como empleado responsable de cargar nuevos productos <br>
-                *Se deberia desarrollar una funcion que depende los permisos otorgados habilite esta seccion o no* 
-                <br>
-                QUIERO QUE AL APRETAR MOSTRAR PRODUCTOS ME LLEVE AL "INDEX" Y AHI LO MUESTRE -Aun no logre hacerlo-
+                "Al hacer click en 'publicar' debe ir a home y agregar esta card" (aun no desarrollado)
             </div>
-            <div>
-            <form id = "productsForm">
+            <div class="card border-primary mb-3" style="max-width: 30rem">
+            <form id = "productsForm" >
+                <div class="mb-3">
+                    <label for="nombre" class="form-label"></label>
+                    <input id="nombre" placeholder="Modelo" type="text" class="form-control" >
+                </div >
                 <select id="fabricante" class="form-select form-select-sm" aria-label=".form-select-sm example">
                     <option selected>Fabricante</option>
                     <option value="ILVA">ILVA</option>
                     <option value="CERRO NEGRO">CERRO NEGRO</option>
                     <option value="SCOP">SCOP</option>
                 </select>
-                <div class="mb-3">
-                    <label for="nombre" class="form-label"></label>
-                    <input id="nombre" placeholder="Modelo" type="text" class="form-control" >
-                </div>
-                <select id="lugarColocacion" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected>Lugar donde puede ser colocado</option>
-                    <option value="Pared">Pared</option>
-                    <option value="Piso">Piso</option>
-                </select>
-                <select id="acabado" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected>Acabado</option>
-                    <option value="Mate">Mate</option>
-                    <option value="Brillante">Brillante</option>
-                    <option value="Pulido">Pulido</option>
-                </select>
-                
-                <select id="medida" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected>Medida (lado x lado)</option>
-                    <option value="44 x 44">44 x 44</option>
-                    <option value="50 x 50">50 x 50</option>
-                    <option value="60 x 60">60 x 60</option>
-                    <option value="120 x 60">120 x 60</option>
-                </select>
-                <select id="uso" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected>Seleccione el uso</option>
-                    <option value="Medio">Medio</option>
-                    <option value="Intenso">Intenso</option>
-                    <option value="No transitable">No transitable</option>
-                </select>
+
                 <div class="mb-3">
                     <label  for="price" class="form-label"></label>
                     <input id="precio" placeholder="Precio" type="number" class="form-control"  >
                 </div>
-            
-            
+                <div class="mb-3">
+                    <label  for="stock" class="form-label"></label>
+                    <input id="stock" placeholder="stock" type="number" class="form-control"  >
+                </div>
+                <div class="col-auto">
                 <button  type="submit" class="btn btn-primary">CARGAR PRODUCTO</button>
+                <button type="button"  id="cargarProductoButton" class="btn btn-primary"> Previsualizar</button>
+                </div>
+                
             </form>
         </div>
         
-        <button type="button"  id="cargarProductoButton" class="btn btn-primary"> Mostrar Productos</button>
         <div id="materiales" class="row"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>    
-    <script src="../JS/navScript.js"></script>
     <script src="../JS/efectosYanimaciones.js"></script>
     <script src="../JS/ABM.js"></script>
 </body>

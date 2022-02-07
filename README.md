@@ -1,2 +1,0 @@
-# bosio_javascript
-# javascriptCoder

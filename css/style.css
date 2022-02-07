@@ -2,30 +2,45 @@ body{
     background-color: white;
     color: black;
     transition: background-color 700ms ease;
+    font-size: 16px;
 }
 
 .blackMode{
-    background-color: black;
-    color: white;
+    background-color: rgb(49, 45, 45);
+    color: rgb(0, 0, 0);
 }
 
-.underConstruction{
+.whatsapp{
     
-    height: 150px;
-    margin-top: 150px;
-    margin-left: 500px;
-    position:absolute;
+    height: 3em;
+    position:fixed;
+    right:1.5em;
+    top: 5em;
     border-style: inherit;
+    z-index: 1;
 }
-.underConstruction2{
+.chatWhatsapp{
     height: 300px;
-    margin-top: 100px;
-    margin-left:20rem;
-    position:absolute;
+    position:fixed;
+    right:3em;
+    top: 5em;   
     border-style: inherit;
-    background-color: #F7F7F7;
-    opacity: .8;
     border-radius: 10px;
+    opacity: 80%;
+    z-index: 1;
+}
+
+.carousel slide{
+    position: absolute;
+}
+.flechaCentro{
+    height:5em;
+    position:absolute;
+    right:45%;
+    top: 56%;
+    border-style: inherit;
+    opacity: 90%;
+    z-index: 1;
 }
 
 .card-container.card {
@@ -44,4 +59,57 @@ body{
     -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
+
+.slider{
+    margin-left: 20em
+}
+
+.botonesLogin{
+    left:70%;
+
+}
+
+.carousel-control-prev{
+    z-index: 0;
+}
+
+.carousel-control-next{
+    z-index: 0;
+}
+
+.card-body{
+    position: relative;
+}
+
+.cardButton{
+    position: absolute;
+    bottom: 0.5em;
+    right: 1em;
+}
+
+#cartImage{
+    position: relative;
+    top:2px;
+
+}
+
+.logoHome{
+    height: 2em;
+}
+
+.container{
+    position: relative;
+    top: 5em;
+}
+
+#mensajeABM{
+    position: relative;
+    top:2.5em
+}
+
+.subtituloProductos{
+    position: relative;
+    left: 45%;
+}
+
 

@@ -45,24 +45,28 @@ $(()=>{
 
 //ANIMACION
         $("#btnAnimacion").click(function(){
-            $(".underConstruction").animate({
+            $(".whatsapp").animate({
                 height: "400px",
-                marginLeft:"280",
+                marginLeft:"auto",
+                marginRight:"auto",
                 marginTop: "50"
 
             },{
                 duration:800,
                 easing:"linear"
 
-        }).replaceWith("<img class='underConstruction2' src='../img/underConstruction.png'></img>")
+        }).replaceWith("<img class='chatWhatsapp' src='../img/chat-whatsapp.png'></img>")
     })
-
     
-    $(".underConstruction").animate({
+    $(".whatsapp").animate({
         
     }).fadeOut(4000).delay(1000).slideDown(1000)
-
 })
+
+function blink() {
+    $('.flechaCentro').fadeOut(5000);
+    $('.flechaCentro').fadeIn(3000);
+} setInterval(blink,2000)
 
 
 
